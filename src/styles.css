@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans+Condensed:300');
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    animation: apparait linear .3s 1;
+}
+
+body {
+    background: linear-gradient(135deg, #a90329 0%, #8f0222 44%, #6d0019 100%);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    padding: 10px 20px;
+}
+
+p {
+    padding: 10px 20px;
+}
+
+a {
+    color: rgba(255, 255, 255, .8);
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+article {
+    color: #000;
+    background: #FFF;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+button[type="reset"] {
+    background-color: rgb(194, 50, 45);
+}
+
+button:not([disabled]) {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .8;
+}
+
+input,
+select,
+button,
+label {
+    padding: 10px 22px;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    margin: 10px;
+}
+
+input,
+select {
+    border: 1px solid #CCC;
+    color: #000;
+}
+
+.unique article {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 75%;
+    margin: auto;
+}
+
+
+/* Mise en page des pages de formulaires */
+
+.formulaire {
+    display: flex;
+}
+
+.formulaire>div {
+    margin: auto;
+}
+
+
+/* Utilisé dans les sections des pages ne contenant qu'un seul article */
+
+article img {
+    width: 100%;
+}
+
+article img.edition {
+    width: auto;
+    float: right;
+    margin: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    max-width: 80%;
+    margin: 0 40px;
+    word-wrap: break-word;
+}
+
+blockquote h2 {
+    padding-bottom: 5px !important;
+}
+
+@media (min-width:1024px) {
+    .unique article {
+        max-width: 50%;
+    }
+}
+
+@keyframes apparait {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

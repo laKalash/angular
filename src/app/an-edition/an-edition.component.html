@@ -1,0 +1,28 @@
+<section class="unique">
+    <article>
+        <h1>Editer une news</h1>
+        <input name="filtre" [(ngModel)]="filtre" placeholder="Filtrer les news">
+        <select id="newsSelect" class="form-control" name="newsSelect" (change)="setNewsActu($event)">
+            <option *ngFor="let n of (donnees.news | newsPipe:filtre); index as i" [value]="i | number">{{n.titre}}</option>
+        </select>
+        <form (ngSubmit)="edition(f)" name="edition" #f="ngForm">
+            <div>
+                <label for="titre" id="titre-label">Titre*</label>
+                <input id="titre" class="form-control" required name="titre" [(ngModel)]="newsActu.titre" #titreCtrl="ngModel">
+                <div *ngIf="titreCtrl.dirty && titreCtrl.hasError('required')" id="titre-warning">Un titre est requis</div>
+            </div>
+            <div>
+                <app-tinymce [(ngModel)]="newsActu.description" name="description"></app-tinymce>
+            </div>
+
+            <div>
+                <label for="image">Image</label>
+                <input id="image" class="form-control" type="text" name="image" [(ngModel)]="newsActu.img" #imgCtrl="ngModel">
+                <div *ngIf="imgCtrl.dirty && imgCtrl.hasError('required')">Vous pouvez ajouter une image</div>
+            </div>
+            <!-- Envoyer le formulaire -->
+            <button type="submit" [disabled]="f.invalid">Let's Go</button>
+            <button type="reset">Annuler ?</button>
+        </form>
+    </article>
+</section>
